@@ -1,0 +1,4 @@
+*** Test Cases ***,${username1},${password1}
+Invalid username,abced,learning
+Invalid password,rahulshetty,1234
+Valid credential,rahulshetty,learning

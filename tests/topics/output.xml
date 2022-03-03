@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.10 on win32)" generated="20220224 11:18:55.594" rpa="false" schemaversion="2">
+<suite id="s1" name="5 use Custom Library" source="C:\Users\csilawat\PycharmProjects\RobotFramworkDemo\tests\topics\5_use_Custom_Library.robot">
+<test id="s1-t1" name="use custome method and add values in cart">
+<kw name="use custome method and add value in cart">
+<kw name="Hello World" library="MyWorld">
+<msg timestamp="20220224 11:18:57.384" level="INFO">Hello form Custom Library 
+['CHEM_RIB-1001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Autologous Cell Therapy', 'CHEM-012', 'Available']
+['CHEM_RIB-1001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Autologous Cell Therapy', 'CHEM-012', 'Available']
+['CHEM_RIB-1001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Autologous Cell Therapy', 'CHEM-012', 'Available']
+['CHEM_RIB-1001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Autologous Cell Therapy', 'CHEM-012', 'Booked']
+['CHEM_BRW-2001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Gene Therapy', 'CHEM-018', 'Available']
+['CHEM_BRW-2001', '2022-05-30T00:00:00.000Z', 'Chemino Therapeutics', 'Gene Therapy', 'CHEM-018', 'Available']
+['CHEM_BRW-2001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Gene Therapy', 'CHEM-018', 'Available']</msg>
+<status status="PASS" starttime="20220224 11:18:55.858" endtime="20220224 11:18:57.384"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220224 11:19:07.387" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220224 11:18:57.384" endtime="20220224 11:19:07.387"/>
+</kw>
+<status status="PASS" starttime="20220224 11:18:55.858" endtime="20220224 11:19:07.387"/>
+</kw>
+<status status="PASS" starttime="20220224 11:18:55.857" endtime="20220224 11:19:07.388"/>
+</test>
+<doc>varify to open url</doc>
+<status status="PASS" starttime="20220224 11:18:55.596" endtime="20220224 11:19:07.389"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="5 use Custom Library">5 use Custom Library</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

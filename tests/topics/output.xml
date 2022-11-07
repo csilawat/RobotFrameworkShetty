@@ -1,31 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.9.10 on win32)" generated="20220224 11:18:55.594" rpa="false" schemaversion="2">
-<suite id="s1" name="5 use Custom Library" source="C:\Users\csilawat\PycharmProjects\RobotFramworkDemo\tests\topics\5_use_Custom_Library.robot">
-<test id="s1-t1" name="use custome method and add values in cart">
-<kw name="use custome method and add value in cart">
-<kw name="Hello World" library="MyWorld">
-<msg timestamp="20220224 11:18:57.384" level="INFO">Hello form Custom Library 
-['CHEM_RIB-1001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Autologous Cell Therapy', 'CHEM-012', 'Available']
-['CHEM_RIB-1001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Autologous Cell Therapy', 'CHEM-012', 'Available']
-['CHEM_RIB-1001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Autologous Cell Therapy', 'CHEM-012', 'Available']
-['CHEM_RIB-1001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Autologous Cell Therapy', 'CHEM-012', 'Booked']
-['CHEM_BRW-2001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Gene Therapy', 'CHEM-018', 'Available']
-['CHEM_BRW-2001', '2022-05-30T00:00:00.000Z', 'Chemino Therapeutics', 'Gene Therapy', 'CHEM-018', 'Available']
-['CHEM_BRW-2001', '2022-03-31T00:00:00.000Z', 'Chemino Therapeutics', 'Gene Therapy', 'CHEM-018', 'Available']</msg>
-<status status="PASS" starttime="20220224 11:18:55.858" endtime="20220224 11:18:57.384"/>
+<robot generator="Robot 4.1.3 (Python 3.9.10 on win32)" generated="20220525 14:23:22.953" rpa="false" schemaversion="2">
+<suite id="s1" name="runCodeForTesting" source="C:\Users\csilawat\PycharmProjects\RobotFramworkDemo\tests\topics\runCodeForTesting.robot">
+<test id="s1-t1" name="Test title">
+<kw name="Create List" library="BuiltIn">
+<var>@{element_list}</var>
+<arg>Manufacturer</arg>
+<arg>Trial ID</arg>
+<arg>Slot ID</arg>
+<arg>Pickup Location</arg>
+<arg>Pickup Location</arg>
+<arg>Cryo Preservation</arg>
+<arg>Infusion Center</arg>
+<arg>Delivery Note</arg>
+<arg>Planned Apheresis Date</arg>
+<arg>Collection Pickup Date</arg>
+<arg>Estimated DP Delivery</arg>
+<arg>Subject ID</arg>
+<arg>First Name</arg>
+<arg>Middle Name</arg>
+<arg>Last Name</arg>
+<arg>Gender</arg>
+<arg>Age</arg>
+<arg>DOB</arg>
+<arg>Remarks</arg>
+<arg>Additional comments</arg>
+<arg>Additional Comments</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220525 14:23:23.431" level="INFO">@{element_list} = [ Manufacturer | Trial ID | Slot ID | Pickup Location | Pickup Location | Cryo Preservation | Infusion Center | Delivery Note | Planned Apheresis Date | Collection Pickup Date | Estimated DP Delivery ...</msg>
+<status status="PASS" starttime="20220525 14:23:23.431" endtime="20220525 14:23:23.432"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220224 11:19:07.387" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20220224 11:18:57.384" endtime="20220224 11:19:07.387"/>
+<kw name="Create List" library="BuiltIn">
+<var>@{location_dropdown_list1}</var>
+<arg>First Name</arg>
+<arg>Middle Name</arg>
+<arg>Last Name</arg>
+<arg>Gender</arg>
+<arg>Age</arg>
+<arg>DOB</arg>
+<arg>Remarks</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220525 14:23:23.432" level="INFO">@{location_dropdown_list1} = [ First Name | Middle Name | Last Name | Gender | Age | DOB | Remarks ]</msg>
+<status status="PASS" starttime="20220525 14:23:23.432" endtime="20220525 14:23:23.433"/>
 </kw>
-<status status="PASS" starttime="20220224 11:18:55.858" endtime="20220224 11:19:07.387"/>
+<for flavor="IN">
+<var>${test}</var>
+<value>@{location_dropdown_list1}</value>
+<iter>
+<var name="${test}">First Name</var>
+<kw name="Log" library="BuiltIn">
+<arg>${test}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 14:23:23.434" level="INFO">First Name</msg>
+<status status="PASS" starttime="20220525 14:23:23.433" endtime="20220525 14:23:23.434"/>
 </kw>
-<status status="PASS" starttime="20220224 11:18:55.857" endtime="20220224 11:19:07.388"/>
+<kw name="List Should Contain Value" library="Collections">
+<arg>${element_list}</arg>
+<arg>${test}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" starttime="20220525 14:23:23.434" endtime="20220525 14:23:23.434"/>
+</kw>
+<status status="PASS" starttime="20220525 14:23:23.433" endtime="20220525 14:23:23.434"/>
+</iter>
+<iter>
+<var name="${test}">Middle Name</var>
+<kw name="Log" library="BuiltIn">
+<arg>${test}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 14:23:23.435" level="INFO">Middle Name</msg>
+<status status="PASS" starttime="20220525 14:23:23.435" endtime="20220525 14:23:23.435"/>
+</kw>
+<kw name="List Should Contain Value" library="Collections">
+<arg>${element_list}</arg>
+<arg>${test}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" starttime="20220525 14:23:23.435" endtime="20220525 14:23:23.435"/>
+</kw>
+<status status="PASS" starttime="20220525 14:23:23.434" endtime="20220525 14:23:23.435"/>
+</iter>
+<iter>
+<var name="${test}">Last Name</var>
+<kw name="Log" library="BuiltIn">
+<arg>${test}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 14:23:23.436" level="INFO">Last Name</msg>
+<status status="PASS" starttime="20220525 14:23:23.436" endtime="20220525 14:23:23.436"/>
+</kw>
+<kw name="List Should Contain Value" library="Collections">
+<arg>${element_list}</arg>
+<arg>${test}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" starttime="20220525 14:23:23.436" endtime="20220525 14:23:23.436"/>
+</kw>
+<status status="PASS" starttime="20220525 14:23:23.435" endtime="20220525 14:23:23.436"/>
+</iter>
+<iter>
+<var name="${test}">Gender</var>
+<kw name="Log" library="BuiltIn">
+<arg>${test}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 14:23:23.437" level="INFO">Gender</msg>
+<status status="PASS" starttime="20220525 14:23:23.437" endtime="20220525 14:23:23.437"/>
+</kw>
+<kw name="List Should Contain Value" library="Collections">
+<arg>${element_list}</arg>
+<arg>${test}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" starttime="20220525 14:23:23.437" endtime="20220525 14:23:23.437"/>
+</kw>
+<status status="PASS" starttime="20220525 14:23:23.436" endtime="20220525 14:23:23.437"/>
+</iter>
+<iter>
+<var name="${test}">Age</var>
+<kw name="Log" library="BuiltIn">
+<arg>${test}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 14:23:23.438" level="INFO">Age</msg>
+<status status="PASS" starttime="20220525 14:23:23.438" endtime="20220525 14:23:23.438"/>
+</kw>
+<kw name="List Should Contain Value" library="Collections">
+<arg>${element_list}</arg>
+<arg>${test}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" starttime="20220525 14:23:23.438" endtime="20220525 14:23:23.439"/>
+</kw>
+<status status="PASS" starttime="20220525 14:23:23.437" endtime="20220525 14:23:23.439"/>
+</iter>
+<iter>
+<var name="${test}">DOB</var>
+<kw name="Log" library="BuiltIn">
+<arg>${test}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 14:23:23.439" level="INFO">DOB</msg>
+<status status="PASS" starttime="20220525 14:23:23.439" endtime="20220525 14:23:23.439"/>
+</kw>
+<kw name="List Should Contain Value" library="Collections">
+<arg>${element_list}</arg>
+<arg>${test}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" starttime="20220525 14:23:23.439" endtime="20220525 14:23:23.440"/>
+</kw>
+<status status="PASS" starttime="20220525 14:23:23.439" endtime="20220525 14:23:23.440"/>
+</iter>
+<iter>
+<var name="${test}">Remarks</var>
+<kw name="Log" library="BuiltIn">
+<arg>${test}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220525 14:23:23.440" level="INFO">Remarks</msg>
+<status status="PASS" starttime="20220525 14:23:23.440" endtime="20220525 14:23:23.440"/>
+</kw>
+<kw name="List Should Contain Value" library="Collections">
+<arg>${element_list}</arg>
+<arg>${test}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" starttime="20220525 14:23:23.441" endtime="20220525 14:23:23.441"/>
+</kw>
+<status status="PASS" starttime="20220525 14:23:23.440" endtime="20220525 14:23:23.441"/>
+</iter>
+<status status="PASS" starttime="20220525 14:23:23.433" endtime="20220525 14:23:23.441"/>
+</for>
+<status status="PASS" starttime="20220525 14:23:23.430" endtime="20220525 14:23:23.442"/>
 </test>
-<doc>varify to open url</doc>
-<status status="PASS" starttime="20220224 11:18:55.596" endtime="20220224 11:19:07.389"/>
+<doc>Suite description</doc>
+<status status="PASS" starttime="20220525 14:23:22.955" endtime="20220525 14:23:23.445"/>
 </suite>
 <statistics>
 <total>
@@ -34,9 +171,10 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="5 use Custom Library">5 use Custom Library</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="runCodeForTesting">runCodeForTesting</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220525 14:23:22.946" level="ERROR">Error in file 'C:\Users\csilawat\PycharmProjects\RobotFramworkDemo\tests\topics\runCodeForTesting.robot' on line 3: Setting 'Documentation' is allowed only once. Only the first value is used.</msg>
 </errors>
 </robot>
